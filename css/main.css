@@ -8,13 +8,20 @@ body {
 }
 
 body #bg {
-  -webkit-clip-path: circle(72.7% at 82% 38%);
-          clip-path: circle(72.7% at 82% 38%);
+  -webkit-clip-path: circle(82.2% at 81% 45%);
+          clip-path: circle(82.2% at 81% 45%);
   background-color: #0d00ff;
   width: 100%;
   height: 100%;
   position: absolute;
   z-index: -1;
+}
+
+@media (min-width: 880px) {
+  body #bg {
+    -webkit-clip-path: circle(82.2% at 66% 49%);
+            clip-path: circle(82.2% at 66% 49%);
+  }
 }
 
 body a {
@@ -23,6 +30,17 @@ body a {
   padding: 15px;
   display: block;
   text-transform: uppercase;
+  text-align: center;
+}
+
+@media (min-width: 880px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+        grid-template-areas: 'primary card';
+  }
 }
 
 main section#card {
@@ -33,6 +51,19 @@ main section#card {
   -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.43);
           box-shadow: 0 10px 20px rgba(0, 0, 0, 0.43);
   width: 80%;
+}
+
+@media (min-width: 880px) {
+  main section#card {
+    grid-area: card;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+  }
 }
 
 main ul {
@@ -67,10 +98,26 @@ main section#primary {
   text-align: center;
 }
 
+@media (min-width: 880px) {
+  main section#primary {
+    grid-area: primary;
+    text-align: left;
+    margin: 4em 0 0 4em;
+  }
+}
+
 main section#primary h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-top: 10px;
   text-transform: uppercase;
+}
+
+@media (min-width: 880px) {
+  main section#primary h1 {
+    width: 30%;
+    font-size: 4em;
+    line-height: 0.9em;
+  }
 }
 
 main section#primary p {
@@ -89,5 +136,12 @@ main section#primary a {
   text-align: center;
   margin: 50px auto 0 auto;
   width: 35%;
+}
+
+@media (min-width: 880px) {
+  main section#primary a {
+    display: inline-block;
+    padding: 15px 60px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
